@@ -1,0 +1,13 @@
+<?php
+    $servername = 'localhost';
+    $username = 'root';
+    $password = '';
+
+    try {
+        $connect = new PDO("mysql:host=$servername;dbname=inventory", $username, $password);
+        $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        // Removed 'echo' to avoid issues with header redirection
+    } catch (\Exception $e) {
+        $error_message = $e->getMessage();
+    }
+?>
